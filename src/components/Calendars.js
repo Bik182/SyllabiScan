@@ -19,10 +19,10 @@ function NumberList(props) {
 
 
 const numbers = {"test1": 5, "test2": 6};
-class Home extends React.Component {
+class Calendars extends React.Component {
   handleClick = () => {
     console.log('this is:', this.props.calendarReducer);
-    this.props.uploadPDF(numbers);
+  
   }
   render() {
 
@@ -31,7 +31,7 @@ class Home extends React.Component {
 
         <div>
           <button onClick={this.handleClick}>
-            Click me
+           get calendars
           </button>
             Hello
           </div>
@@ -57,11 +57,11 @@ const mapStateToProps = (state /*, ownProps*/) => {
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
-      uploadPDF: uploadPDF,
+     
 
     },
     dispatch
   );
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Calendars);
 

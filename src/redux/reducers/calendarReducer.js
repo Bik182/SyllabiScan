@@ -5,8 +5,8 @@ import { UPLOAD_PDF_PENDING, UPLOAD_PDF_SUCCESS, UPLOAD_PDF_ERROR} from "../acti
 // Initial State
 export const initialState = {
     // Redux Store
-    pdfData: {}
-  
+    pdfData: {},
+    tempUploadHolder: {}
 };
 // Reducers (Modifies The State And Returns A New State)
 export const calendarReducer = (state = initialState, action) => {
@@ -15,14 +15,15 @@ export const calendarReducer = (state = initialState, action) => {
         case UPLOAD_PDF_PENDING: {
             var newState = {
                 ...state,
-             
+                
             }
             return newState;
         }
         case UPLOAD_PDF_SUCCESS: {
+            console.log("AC, ", action);
             var newState = {
                 ...state,
-             
+                tempUploadHolder: action.uploadedFile
             }
             return newState;
         }

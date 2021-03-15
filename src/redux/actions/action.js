@@ -8,12 +8,14 @@ export const UPLOAD_PDF_ERROR = "UPLOAD_PDF_ERROR";
 export function uploadPDFPending() {
     return {
         type: UPLOAD_PDF_PENDING,
+        
     };
 }
 
-export function uploadPDFSuccess() {
+export function uploadPDFSuccess(file) {
     return {
         type: UPLOAD_PDF_SUCCESS,
+        uploadedFile: file,
     };
 }
 
