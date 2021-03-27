@@ -18,7 +18,7 @@ export function uploadPDF() {
 
     // fetch("https://api.pdf.co/v1/pdf/convert/to/json2", {
     fetch(
-      "https://api.pdf.co/v1/pdf/convert/to/text?x-api-key=bikalt182@gmail.com_aa8bae2da0c3085d&url=filetoken://d310c3232c11a8944bdb30c9&inline=true",
+      "https://api.pdf.co/v1/pdf/convert/to/text?x-api-key=bikalt182@gmail.com_aa8bae2da0c3085d&url=filetoken://ec34996d2c8880c5e0e37d80&inline=true",
       {
         method: "POST",
         headers: {
