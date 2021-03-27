@@ -30,14 +30,14 @@ export function uploadPDF() {
       .then((res) => res.json())
       .then((json) => {
         if (json.error == false) {
-          console.log("addFriendSuccess: ", json.body);
+          console.log("upload succ: ", json.body);
           dispatch(uploadPDFSuccess(json.body));
         } else {
-          console.log("adderror.ks", json);
+          console.log("upload failed.ks", json);
         }
       })
       .catch((err) => {
-        console.log("add errir.ks", err);
+        console.log("upload failed.ks", err);
       });
   };
 }
