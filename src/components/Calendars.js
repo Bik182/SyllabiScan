@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { NavigationBar } from './NavigationBar';
 import { bindActionCreators } from "redux";
 
+
 import { uploadPDF } from "../redux/fetch/upload.js";
 
 function NumberList(props) {
@@ -17,12 +18,12 @@ function NumberList(props) {
   );
 }
 
-
 const numbers = {"test1": 5, "test2": 6};
 class Calendars extends React.Component {
   handleClick = () => {
     console.log('this is:', this.props.calendarReducer);
-  
+     //this.props.uploadPDF(numbers);
+    //parsePDF();
   }
   render() {
 

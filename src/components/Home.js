@@ -21,8 +21,16 @@ function NumberList(props) {
 const numbers = {"test1": 5, "test2": 6};
 class Home extends React.Component {
   handleClick = () => {
-    console.log('this is:', this.props.calendarReducer);
-    this.props.uploadPDF(numbers);
+    var keys = Object.keys(JSON.parse(this.props.calendarReducer.tempUploadHolder));
+    console.log('this is:', keys);
+    // below is where we make the call, follow it to understand, uncomment, save and press the button, look at console in browser.
+    //inspect the page and click on console, you should see a response with a body and other properties.
+    //after comment the line bellow again, the json file of the pdf will be in the reducer
+
+
+
+
+    //this.props.uploadPDF();
   }
   render() {
 
