@@ -30,7 +30,7 @@ export function uploadPDF() {
       .then((res) => res.json())
       .then((json) => {
         if (json.error == false) {
-          console.log("upload succ: ", json.body);
+          console.log("upload succ: ", json);
           dispatch(uploadPDFSuccess(json.body));
         } else {
           console.log("upload failed.ks", json);

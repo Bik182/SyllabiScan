@@ -6,6 +6,7 @@ import { NavigationBar } from './NavigationBar';
 import { bindActionCreators } from "redux";
 
 import { uploadPDF } from "../redux/fetch/upload.js";
+import { findEvents } from "../redux/fetch/events.js";
 
 function NumberList(props) {
   const numbers = props.numbers;
@@ -21,7 +22,7 @@ function NumberList(props) {
 const numbers = {"test1": 5, "test2": 6};
 class Home extends React.Component {
   handleClick = () => {
-    var keys = Object.keys(JSON.parse(this.props.calendarReducer.tempUploadHolder));
+    var keys = (JSON.stringify(this.props.calendarReducer.tempUploadHolder));
     console.log('this is:', keys);
     // below is where we make the call, follow it to understand, uncomment, save and press the button, look at console in browser.
     //inspect the page and click on console, you should see a response with a body and other properties.
@@ -32,6 +33,24 @@ class Home extends React.Component {
 
     //this.props.uploadPDF();
   }
+
+    handleClick = () => {
+    var keys = (JSON.stringify(this.props.calendarReducer.tempUploadHolder));
+    console.log('this is:', keys);
+    // below is where we make the call, follow it to understand, uncomment, save and press the button, look at console in browser.
+    //inspect the page and click on console, you should see a response with a body and other properties.
+    //after comment the line bellow again, the json file of the pdf will be in the reducer
+
+
+
+
+    //this.props.uploadPDF();
+  }  
+  eventsClick = () => {
+  
+    
+    this.props.findEvents(this.props.calendarReducer.tempUploadHolder);
+  }
   render() {
 
     return (
@@ -40,6 +59,10 @@ class Home extends React.Component {
         <div>
           <button onClick={this.handleClick}>
             Click me
+          </button>
+
+           <button onClick={this.eventsClick}>
+            Identify events
           </button>
             Hello
           </div>
@@ -66,7 +89,7 @@ const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       uploadPDF: uploadPDF,
-
+      findEvents: findEvents,
     },
     dispatch
   );
